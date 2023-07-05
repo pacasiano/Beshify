@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Beshify</title>
+</head>
+<body>
+
+    <div class="flex justify-center items-center h-screen bg-violet-300">
+        <div class="bg-pink-200 p-5 rounded-xl">
+
+            <h1 class="font-black text-violet-500 text-center text-xl pb-3 ">BAT MALUNGKOT ANG BESHY KO?</h1>
+
+            <div class="flex flex-row gap-2 pb-3">
+            <input id="beshy" type="text" placeholder="itype dito mo dito beshy" class="w-full rounded-md pl-1">
+            <button class="bg-pink-300 text-violet-800 rounded-md px-2 font-medium" onclick="BeshyGo()">Beshify</button>
+            </div>
+
+            <span class="text-violet-500 font-bold">Beshy text:</span>
+            <textarea id="beshyOutput" class="w-full rounded-md resize-none px-1" rows="5" readonly></textarea>
+            <button class="bg-pink-300 text-violet-800 rounded-md px-2 font-medium w-full" onclick="CopyBeshy()">Copy beshy text</button>
+
+        </div>
+    </div>
+    
+</body>
+
+<script>
+
+    function BeshyGo() {
+
+        let text = document.getElementById("beshy").value
+
+        let beshyText = text.replace(/ /g, "🤸")
+
+        document.getElementById("beshyOutput").value = beshyText
+
+    }
+
+    function CopyBeshy() {
+
+        var beshyOutput = document.getElementById("beshyOutput");
+        beshyOutput.select();
+        beshyOutput.setSelectionRange(0, 99999); // For mobile devices
+
+        document.execCommand("copy");
+        alert("Copied Beshy text");
+
+    }
+
+</script>
+
+
+</html>
